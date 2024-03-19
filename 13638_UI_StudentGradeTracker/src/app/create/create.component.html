@@ -1,0 +1,38 @@
+<div class="p-8 mt-8 flex justify-center">
+    <form class="shadow border w-4/12 p-4">
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Fitst Name </mat-label>
+                <input matInput name="firstName" type="text" [(ngModel)]="createStudent.firstName">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Last Name </mat-label>
+                <input matInput name="lastName" type="text" [(ngModel)]="createStudent.lastName">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Middle Name </mat-label>
+                <input matInput name="middleName" type="text" [(ngModel)]="createStudent.middleName">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Choose Grade</mat-label>
+                <mat-select [(ngModel)]="cID" name="Category">
+                    @for(c of cate; track c)
+                    {
+                    <mat-option [value]="c.id">{{c.grade}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="flex justify-center">
+            <button mat-raised-button color="primary" (click)="create()">Create</button>
+        </div>
+    </form>
+</div>
+
