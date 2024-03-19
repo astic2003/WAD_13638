@@ -36,7 +36,6 @@ namespace _13638_WEBAPI.Controllers
             return result == null ? NotFound() : Ok(result);
         }
 
-        // PUT: api/Students/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
