@@ -19,10 +19,10 @@ export class DeleteComponent {
     firstName: "",
     lastName: "",
     middleName: "",
-    gradeId: 0,
+    gradeID: 0,
     grade: {
       id: 0,
-      grade: 0
+      gradeNum: 0
     }
   };
   service = inject(APIService)

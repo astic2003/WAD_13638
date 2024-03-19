@@ -23,7 +23,7 @@ export class HomeComponent {
     this.ApiService.getAll().subscribe((result)=>{this.items = result}); 
   }
 
-  displayedColumns: string[] = ['ID', 'Title', 'Description', 'Category Name', 'Actions'];
+  displayedColumns: string[] = ['ID', 'firstName', 'lastName', 'middleName', 'grade', 'Actions'];
   
   EditClicked(itemID:number){
     console.log(itemID, "From Edit");

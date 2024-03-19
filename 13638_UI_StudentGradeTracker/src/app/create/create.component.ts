@@ -38,8 +38,10 @@ export class CreateComponent {
   }
 
   ngOnInit() {
-    this.ApiService.getAllCategories().subscribe((result) => {
+    this.ApiService.getAllGrades().subscribe((result) => {
       this.cate = result
+      console.log(this.cate);
+      
     });
 
   };

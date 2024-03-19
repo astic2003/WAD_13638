@@ -21,10 +21,10 @@
         <div class="flex">
             <mat-form-field class="w-full">
                 <mat-label>Choose Grade</mat-label>
-                <mat-select [(ngModel)]="cID" name="Category">
+                <mat-select [(ngModel)]="cID" name="Grade">
                     @for(c of cate; track c)
                     {
-                    <mat-option [value]="c.id">{{c.grade}}</mat-option>
+                    <mat-option [value]="c.id">{{c.gradeNum}}</mat-option>
                     }
                 </mat-select>
 

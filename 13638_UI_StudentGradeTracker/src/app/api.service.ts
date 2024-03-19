@@ -10,22 +10,22 @@ export class APIService {
   constructor() { }
 
   getAll(){
-    return this.httpClient.get<Student[]>("http://localhost:5173/api/A/GetAll")
+    return this.httpClient.get<Student[]>("https://localhost:7093/api/Students")
   };
 
   getByID(id:number){
-    return this.httpClient.get<Student>("http://localhost:5173/api/A/GetByID/"+id);
+    return this.httpClient.get<Student>("https://localhost:7093/api/Students/"+id);
   };
   edit(item:Student){
-    return this.httpClient.put("http://localhost:5173/api/A/Update", item);  
+    return this.httpClient.put("https://localhost:7093/api/Students", item);  
   };
   delete(id:number){
-    return this.httpClient.delete("http://localhost:5173/api/A/Delete/"+id);
+    return this.httpClient.delete("https://localhost:7093/api/Students/"+id);
   };
   create(item:Student){
-    return this.httpClient.post<Student>("http://localhost:5173/api/A/Create", item);
+    return this.httpClient.post<Student>("https://localhost:7093/api/Students", item);
   };
-  getAllCategories(){
-    return this.httpClient.get("http://localhost:5173/api/C/GetAll")
+  getAllGrades(){
+    return this.httpClient.get("https://localhost:7093/api/Grades")
   };
 }

@@ -2,29 +2,29 @@
     <form class="shadow border w-4/12 p-4">
         <div class="flex">
             <mat-form-field class="w-full">
-                <mat-label>Name </mat-label>
-                <input matInput name="title" type="text" [(ngModel)]="editFeature.title">
+                <mat-label>First Name </mat-label>
+                <input matInput name="firstName" type="text" [(ngModel)]="editStudent.firstName">
             </mat-form-field>
         </div>
         <div class="flex">
             <mat-form-field class="w-full">
                 <mat-label>Last Name </mat-label>
-                <input matInput name="description" type="text" [(ngModel)]="editFeature.description">
+                <input matInput name="lastName" type="text" [(ngModel)]="editStudent.lastName">
             </mat-form-field>
         </div>
         <div class="flex">
             <mat-form-field class="w-full">
                 <mat-label>Middle Name </mat-label>
-                <input matInput name="description" type="text" [(ngModel)]="editFeature.description">
+                <input matInput name="middleName" type="text" [(ngModel)]="editStudent.middleName">
             </mat-form-field>
         </div>
         <div class="flex">
             <mat-form-field class="w-full">
-                <mat-label>Choose Category</mat-label>
-                <mat-select [(ngModel)]="cID" [(value)]="selected" name="Category">
+                <mat-label>Choose Grade</mat-label>
+                <mat-select [(ngModel)]="cID" [(value)]="selected" name="Grade">
                     @for(c of gradeObject; track c)
                     {
-                    <mat-option [value]="c.id">{{c.grade}}</mat-option>
+                    <mat-option [value]="c.id">{{c.gradeNum}}</mat-option>
                     }
                 </mat-select>
 

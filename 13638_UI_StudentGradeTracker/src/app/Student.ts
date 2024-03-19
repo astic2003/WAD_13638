@@ -3,9 +3,9 @@ export interface Student{
     firstName: string;
     lastName: string;
     middleName: string;
-    gradeId: number;
+    gradeID: number;
     grade: {
       id: number;
-      grade: number;
+      gradeNum: number;
     };
 }

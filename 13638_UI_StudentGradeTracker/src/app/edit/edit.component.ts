@@ -23,31 +23,31 @@ export class EditComponent {
   serv = inject(APIService); // Service to get and send data from and to the API
   activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
-  editS: Student = {
+  editStudent: Student = {
     id: 0,
     firstName: "",
     lastName: "",
     middleName: "",
-    gradeId: 0,
+    gradeID: 0,
     grade: {
       id: 0,
-      grade: 0
+      gradeNum: 0
     }
   };
-  categoryObject: any; // Category Object for listing
+  gradeObject: any; // Category Object for listing
   selected: any // if any selected by default
   cID: number = 0;// category ID To inject to
   ngOnInit() {
     console.log(this.activatedRoute.snapshot.params["id"])
 
-    this.serv.getByID(this.activatedRoute.snapshot.params["id"]).subscribe(result => {
-      this.editS = result;
-      console.log(this.editS)
-      this.selected = this.editS.gradeId;
+    this.serv.getByID(this.activatedRoute.snapshot.params["id"]).subscribe(result => {      
+      this.editStudent = result;
+      this.selected = this.editStudent.gradeID;
     });
 
-    this.serv.getAllCategories().subscribe((result) => {
-      this.categoryObject = result;
+    this.serv.getAllGrades().subscribe((result) => {
+      this.gradeObject = result;
+      
     });
   }
 
@@ -56,9 +56,12 @@ export class EditComponent {
   }
 
   edit() {
-    this.editS.gradeId = this.cID;
-    this.editS.grade = this.categoryObject[findIndexByID(this.categoryObject, this.cID)];
-    this.serv.edit(this.editS).subscribe(res=>{
+    this.editStudent.gradeID = this.cID;
+    this.editStudent.grade = this.gradeObject[findIndexByID(this.gradeObject, this.cID)];
+    console.log(this.editStudent);
+    this.serv.edit(this.editStudent).subscribe(res=>{
+      console.log(res);
+      
       alert("Changes has been updated")
       this.router.navigateByUrl("home");
     })
